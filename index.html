@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table Puzzle</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Table Puzzle</h1>
+      <p>Arraste os personagens para as mesas sem criar conflitos.</p>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Personagens</h2>
+        <div id="character-pool" class="character-pool" aria-label="Personagens disponíveis"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Salão</h2>
+        <p id="status" class="status">Distribua todos os 14 personagens.</p>
+        <div id="tables" class="tables" aria-label="Mesas do jogo"></div>
+      </section>
+    </main>
+
+    <template id="character-template">
+      <article class="character" draggable="true">
+        <h3></h3>
+        <p class="description"></p>
+      </article>
+    </template>
+
+    <template id="table-template">
+      <section class="table-wrap">
+        <h3></h3>
+        <div class="table-seats"></div>
+        <p class="table-feedback" aria-live="polite"></p>
+      </section>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
