@@ -1,0 +1,140 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f7f7fb;
+  --card: #ffffff;
+  --accent: #4d6bff;
+  --ok: #1f9d55;
+  --error: #d64545;
+  --text: #1f2230;
+  --muted: #5c6275;
+  --border: #d8dced;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  padding: 1.2rem 1rem 0.8rem;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+main {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  padding: 0 1rem 1rem;
+}
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 8px 30px rgb(16 22 42 / 8%);
+}
+
+.character-pool {
+  margin-top: 0.75rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.character {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.6rem;
+  background: #fff;
+  cursor: grab;
+}
+
+.character:active {
+  cursor: grabbing;
+}
+
+.character h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.character .description {
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.status {
+  margin-top: 0.4rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.tables {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.table-wrap {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem;
+  background: #fff;
+}
+
+.table-wrap h3 {
+  margin-bottom: 0.5rem;
+}
+
+.table-seats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.seat {
+  min-height: 84px;
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  padding: 0.3rem;
+  background: #fafaff;
+}
+
+.seat.drag-over,
+#character-pool.drag-over {
+  border-color: var(--accent);
+  background: #eef2ff;
+}
+
+.seat .character {
+  margin: 0;
+}
+
+.table-feedback {
+  margin-top: 0.55rem;
+  min-height: 1.2rem;
+  font-size: 0.82rem;
+  color: var(--ok);
+}
+
+.table-feedback.error {
+  color: var(--error);
+}
+
+.win {
+  color: var(--ok);
+}
